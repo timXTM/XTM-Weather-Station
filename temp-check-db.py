@@ -44,7 +44,7 @@ try:
     while True:
         now = time.ctime()
         celcius_temp = read_tempC()
-        print(read_tempC(), 'C, ', read_tempF(), 'F ')
+        print(read_tempC(), 'C, ')
         with open("temp_data.json", "w") as write_file:
             json.dump(read_tempC(), write_file)
         json_body = [{
@@ -52,7 +52,6 @@ try:
                 "tags": {
                     "location": "weather-station",
                 },
-            "time": now,
             "fields": {
                 "temperature" : celcius_temp,
             }
